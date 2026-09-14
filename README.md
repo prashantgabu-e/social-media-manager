@@ -90,6 +90,8 @@ The production output is generated in `docs` for GitHub Pages branch deployment.
 
 This project is configured to publish the Vite production build from the `/docs` folder.
 
+Vite uses relative asset paths, so the built app works from a project page such as `/social-media-manager/`.
+
 Add these repository secrets in GitHub:
 
 - `VITE_FIREBASE_API_KEY`
