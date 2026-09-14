@@ -7,6 +7,8 @@ export default defineConfig({
     ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}/`
     : "/",
   build: {
+    outDir: "docs",
+    emptyOutDir: true,
     rollupOptions: {
       output: {
         manualChunks: {

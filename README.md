@@ -84,13 +84,11 @@ npm run lint
 npm run build
 ```
 
-The production output is generated in `dist`.
+The production output is generated in `docs` for GitHub Pages branch deployment.
 
 ## GitHub Pages Deployment
 
-The included workflow at `.github/workflows/deploy.yml` deploys the app to GitHub Pages from the `main` branch.
-
-In repository settings, set **Pages > Build and deployment > Source** to **GitHub Actions**. Do not use the legacy "Deploy from a branch" `/docs` option for this app.
+This project is configured to publish the Vite production build from the `/docs` folder.
 
 Add these repository secrets in GitHub:
 
@@ -101,7 +99,14 @@ Add these repository secrets in GitHub:
 - `VITE_FIREBASE_MESSAGING_SENDER_ID`
 - `VITE_FIREBASE_APP_ID`
 
-Then enable GitHub Pages with GitHub Actions as the source. The app uses hash-based routing, so refreshing nested routes works on GitHub Pages.
+Then run `npm run build` and commit the generated `docs` folder.
+
+In repository settings, set **Pages > Build and deployment > Source** to **Deploy from a branch**, then choose:
+
+- Branch: `main`
+- Folder: `/docs`
+
+The app uses hash-based routing, so refreshing nested routes works on GitHub Pages. The build includes `.nojekyll` so GitHub Pages serves the Vite assets directly instead of processing them with Jekyll.
 
 ## Firestore Security Rules
 

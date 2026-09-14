@@ -6,7 +6,6 @@
 .vscode/settings.json
 node_modules
 dist/
-docs/
 *.tsbuildinfo
 vite.config.js
 vite.config.d.ts
