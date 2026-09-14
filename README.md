@@ -90,6 +90,8 @@ The production output is generated in `dist`.
 
 The included workflow at `.github/workflows/deploy.yml` deploys the app to GitHub Pages from the `main` branch.
 
+In repository settings, set **Pages > Build and deployment > Source** to **GitHub Actions**. Do not use the legacy "Deploy from a branch" `/docs` option for this app.
+
 Add these repository secrets in GitHub:
 
 - `VITE_FIREBASE_API_KEY`
